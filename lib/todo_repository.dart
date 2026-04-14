@@ -19,7 +19,7 @@ class TodoRepository {
   void complete (int id) {
     for(var todo in _todos){
       if(todo.id == id ){
-        todo.isDone == true;
+        todo.isDone = true;
         return;
       }
     }
