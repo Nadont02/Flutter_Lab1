@@ -90,7 +90,7 @@ bool heandleCommand(repo, String input) {
 }
 
 void printMenu() {
-  print("Приложение Todo");
+  print(yellowPen("Консольное приложение TODO"));
   print("Команды");
   print("add <текст>    - добавить задачу");
   print("list           - показать список");
@@ -140,8 +140,4 @@ void printMenu() {
     int id = int.parse(parts[1]);
     repo.delete(id);
     print("Задача удалена");
-  }
-
-  void printMenu(){
-    print(yellowPen("Консольное приложение TODO"));
   }
