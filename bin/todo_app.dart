@@ -1,7 +1,14 @@
 import 'dart:io';
+import 'dart:math';
 
 import '../lib/todo.dart';
 import '../lib/todo_repository.dart';
+import 'package:ansicolor/ansicolor.dart';
+
+final AnsiPen greenPen = AnsiPen()..green();
+final AnsiPen redPen = AnsiPen()..red();
+final AnsiPen bluePen = AnsiPen()..blue();
+final AnsiPen yellowPen = AnsiPen()..yellow();
 
 void main(){
   // print("Hello world!");
@@ -53,6 +60,7 @@ void main(){
 }
 
 bool heandleCommand(repo, String input) {
+  print(redPen("Ошибка: $e"));
   List<String> parts = input.split(" ");
   String command = parts [0].toLowerCase();
   try{
@@ -132,4 +140,8 @@ void printMenu() {
     int id = int.parse(parts[1]);
     repo.delete(id);
     print("Задача удалена");
+  }
+
+  void printMenu(){
+    print(yellowPen("Консольное приложение TODO"));
   }
